@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <!--这里放容器里面的所有节点-->
+  <description>An  example that demonstrates simple IoC features.</description>
+  <!--name 必须要唯一的，type=类的全名称，所在的程序集-->
+  <!--构造函数注入-->
+  <object name="NewUserInfo" type="Spring.Net.Demo.NewUserInfo, Spring.Net.Demo">
+    <constructor-arg index="0" value="神刀张三"/>
+    <!--ref指向下面的属性注入-->
+    <constructor-arg index="1" ref="Order"/>
+  </object>
+  <!--复杂属性注入-->
+  <object name="Order"  type="Spring.Net.Demo.Order, Spring.Net.Demo">
+    <property name="OrderNo" value="201606122226"/>
+  </object>
+</objects>
